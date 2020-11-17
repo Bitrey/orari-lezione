@@ -83,7 +83,7 @@ const updateDate = () => {
 updateDate();
 setInterval(updateDate, 200);
 
-const containerDiv = document.querySelector(".container");
+const materieDiv = document.getElementById("materie");
 for (const orario of orari) {
     const cardDiv = document.createElement("div");
     cardDiv.setAttribute("class", "card");
@@ -143,5 +143,5 @@ for (const orario of orari) {
     mediaDiv.append(mediaContentDiv);
     cardContentDiv.append(mediaDiv);
     cardDiv.append(cardContentDiv);
-    containerDiv.append(cardDiv);
+    materieDiv.append(cardDiv);
 }
