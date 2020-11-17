@@ -1,0 +1,126 @@
+[
+    {
+        "id": "tele",
+        "nome": "telecomunicazioni",
+        "link": "https://meet.google.com/lookup/d4s6cdyrzb",
+        "tag": ["roberta severi", "telecomunicazioni", "elettronica"],
+        "ore": [
+            {
+                "giorno": 1,
+                "da": 10,
+                "a": 12
+            },
+            {
+                "giorno": 3,
+                "da": 8,
+                "a": 10
+            }
+        ]
+    },
+    {
+        "id": "tpsit",
+        "nome": "TPSIT",
+        "link": "https://meet.google.com/lookup/gifgyincou",
+        "tag": ["roberta severi", "registri del core", "elettronica"],
+        "ore": [
+            {
+                "giorno": 1,
+                "da": 8,
+                "a": 10
+            },
+            {
+                "giorno": 4,
+                "da": 9,
+                "a": 10
+            }
+        ]
+    },
+    {
+        "id": "marassi",
+        "nome": "sistemi e reti",
+        "link": "https://meet.google.com/uup-sjho-jsb",
+        "tag": ["lorena marassi", "sistemi e reti", "pitone", "bash"],
+        "ore": [
+            {
+                "giorno": 2,
+                "da": 10,
+                "a": 11
+            },
+            {
+                "giorno": 4,
+                "da": 11,
+                "a": 12
+            },
+            {
+                "giorno": 5,
+                "da": 14,
+                "a": 16
+            }
+        ]
+    },
+    {
+        "id": "nerini",
+        "nome": "italiano / storia",
+        "link": "https://meet.google.com/lookup/dvhm4st7z3",
+        "tag": ["silvia nerini", "italiano", "storia"],
+        "ore": [
+            {
+                "giorno": 2,
+                "da": 8,
+                "a": 9
+            },
+            {
+                "giorno": 3,
+                "da": 11,
+                "a": 12
+            },
+            {
+                "giorno": 6,
+                "da": 8,
+                "a": 10
+            }
+        ]
+    },
+    {
+        "id": "decarlo",
+        "nome": "matematica",
+        "link": "https://meet.google.com/lookup/cgeemarozp",
+        "tag": ["lucia de carlo", "mate"],
+        "ore": [
+            {
+                "giorno": 2,
+                "da": 9,
+                "a": 10
+            },
+            {
+                "giorno": 3,
+                "da": 10,
+                "a": 11
+            },
+            {
+                "giorno": 5,
+                "da": 8,
+                "a": 9
+            }
+        ]
+    },
+    {
+        "id": "macchia",
+        "nome": "inglese",
+        "link": "https://meet.google.com/landing",
+        "note": "usa il codice profmacchiadad",
+        "tag": ["carlo macchia", "profmacchiadad"],
+        "ore": [
+            {
+                "giorno": 2,
+                "da": 11,
+                "a": 12
+            },
+            {
+                "giorno": 6,
+                "da": 11,
+                "a": 12
+            }
+        ]
+    }
+]
