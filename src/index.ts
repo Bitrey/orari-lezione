@@ -22,5 +22,5 @@ app.get("/", (req, res) => {
 const PORT = Number(process.env.PORT) || 3000;
 const IP = process.env.IP || "127.0.0.1";
 app.listen(PORT, IP, function () {
-    console.log(`Server started on ${IP}:${PORT}`);
+    console.log(`Server partito su ${IP}:${PORT}`);
 });
