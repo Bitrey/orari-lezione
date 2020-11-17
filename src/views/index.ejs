@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="it">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Link Lezioni 4F</title>
+        <!-- Bulma CSS -->
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css"
+            integrity="sha256-WLKGWSIJYerRN8tbNGtXWVYnUM5wMJTXD8eG4NtGcDM="
+            crossorigin="anonymous"
+        />
+        <style>
+            body {
+                background-color: #eef6fc;
+                padding-bottom: 2rem;
+            }
+            .navbar-menu,
+            .navbar-brand {
+                background-color: #3298dc;
+            }
+
+            .navbar-item {
+                color: white !important;
+            }
+
+            .container {
+                padding-top: 2rem;
+            }
+
+            .media-content {
+                overflow-y: hidden;
+            }
+            .tags {
+                margin-top: 1rem;
+            }
+            .card {
+                margin-bottom: 0.5rem;
+            }
+        </style>
+    </head>
+    <body>
+        <nav class="navbar">
+            <div class="navbar-brand">
+                <div class="navbar-item">
+                    <p class="navbar-item title is-3">Link lezioni 4F</p>
+                </div>
+            </div>
+
+            <div class="navbar-menu">
+                <div class="navbar-end">
+                    <div class="navbar-item">
+                        <p class="subtitle-is-4">ITIS Fermi</p>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <div class="container">
+            <div class="message is-info box" style="padding: 0">
+                <div class="message-header">
+                    <p>
+                        Sono le <span id="ora-attuale">XX</span> del
+                        <span id="data-attuale">XX</span>
+                    </p>
+                </div>
+                <div class="message-body" style="background-color: white">
+                    <p id="materia-attuale">Caricamento materia attuale...</p>
+                    <p id="note-materia">
+                        Note:
+
+                        <span id="note-materia-span" style="font-weight: 600">
+                            Caricamento note materia...
+                        </span>
+                    </p>
+                    <a
+                        href="#"
+                        id="link-attuale"
+                        style="display: none"
+                        target="_blank"
+                        class="subtitle is-6"
+                    ></a>
+                </div>
+            </div>
+        </div>
+        <p id="orari-server" style="display: none"><%= orari %></p>
+    </body>
+    <script src="/js/index.js"></script>
+</html>
