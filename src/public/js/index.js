@@ -20,8 +20,10 @@ orariElem.remove();
 let materiaAttuale = null;
 
 const trovaMateriaAttuale = date => {
+    let prossimaMateria = null;
     const giornoAttuale = date.getDay();
     const oraAttuale = date.getHours();
+    const minutiAttuali = date.getMinutes();
     let materiaTrovata;
     let oraTrovata;
     for (const orario of orari) {
@@ -34,17 +36,30 @@ const trovaMateriaAttuale = date => {
                 materiaTrovata = orario;
                 oraTrovata = ora;
             }
+            if (
+                ora.giorno === giornoAttuale &&
+                ora.da === oraAttuale + 1 &&
+                (!materiaTrovata || materiaTrovata.nome !== orario.nome)
+            ) {
+                prossimaMateria = orario;
+            }
         }
     }
     // Non fare diretto return orario,
     // altrimenti viene segnata ora passata
-    return materiaTrovata ? { ...materiaTrovata, ...oraTrovata } : null;
+    return { materiaTrovata, oraTrovata, minutiAttuali, prossimaMateria };
 };
 
 const materiaAttualeElem = document.getElementById("materia-attuale");
 const noteMateriaElem = document.getElementById("note-materia");
 const noteMateriaSpan = document.getElementById("note-materia-span");
 const linkAttualeElem = document.getElementById("link-attuale");
+
+const prossimaMateriaDiv = document.getElementById("prossima-materia-div");
+const prossimaMateriaElem = document.getElementById("prossima-materia");
+const noteProssimaElem = document.getElementById("note-prossima");
+const noteProssimaSpan = document.getElementById("note-prossima-span");
+const linkProssimaElem = document.getElementById("link-prossima");
 
 const updateDate = () => {
     const date = new Date();
@@ -60,24 +75,53 @@ const updateDate = () => {
     dataElem.textContent = dayMonthYear;
     oraElem.textContent = strTime;
 
-    materiaAttuale = trovaMateriaAttuale(date);
+    const {
+        materiaTrovata,
+        oraTrovata,
+        minutiAttuali,
+        prossimaMateria
+    } = trovaMateriaAttuale(date);
+    materiaAttuale = materiaTrovata;
 
-    if (materiaAttuale) {
-        materiaAttualeElem.textContent = `Ora abbiamo ${materiaAttuale.nome} (dalle ${materiaAttuale.da} alle ${materiaAttuale.a}).`;
-        if (materiaAttuale.note) {
-            noteMateriaSpan.textContent = materiaAttuale.note;
+    if (materiaTrovata) {
+        materiaAttualeElem.textContent = `Ora abbiamo ${materiaTrovata.nome} (dalle ${oraTrovata.da} alle ${oraTrovata.a}).`;
+        if (materiaTrovata.note) {
+            noteMateriaSpan.textContent = materiaTrovata.note;
             noteMateriaElem.style.display = "block";
         } else noteMateriaElem.style.display = "none";
 
         linkAttualeElem.style.display = "block";
-        linkAttualeElem.href = materiaAttuale.link + "?pli=1&authuser=1";
-        linkAttualeElem.textContent = materiaAttuale.link;
+        linkAttualeElem.href = materiaTrovata.link + "?pli=1&authuser=1";
+        linkAttualeElem.textContent = materiaTrovata.link;
     } else {
-        materiaAttualeElem.textContent =
-            "Ora non abbiamo lezione, in teoria c:";
+        if (prossimaMateria) {
+            materiaAttualeElem.style.display = "none";
+        } else {
+            materiaAttualeElem.textContent =
+                "Ora non abbiamo lezione, in teoria c:";
+            materiaAttualeElem.style.display = "block";
+        }
 
         linkAttualeElem.style.display = "none";
         noteMateriaElem.style.display = "none";
+    }
+
+    if (prossimaMateria) {
+        prossimaMateriaDiv.style.display = "block";
+        prossimaMateriaElem.textContent = `Tra ${
+            60 - minutiAttuali
+        } minuti abbiamo ${prossimaMateria.nome}`;
+        if (prossimaMateriaElem.note) {
+            noteProssimaElem.textContent = prossimaMateriaElem.note;
+            noteProssimaElem.style.display = "block";
+        } else noteProssimaElem.style.display = "none";
+
+        // linkProssimaElem.style.display = "block";
+        linkProssimaElem.href = prossimaMateria.link + "?pli=1&authuser=1";
+        linkProssimaElem.textContent = prossimaMateria.link;
+    } else {
+        // linkProssimaElem.style.display = "none";
+        prossimaMateriaDiv.style.display = "none";
     }
 };
 updateDate();
