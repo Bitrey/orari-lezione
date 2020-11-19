@@ -3,7 +3,7 @@
 Uno strumento semplicissimo per salvare in uno spazio unico il link delle lezioni online di tutte le materie.
 Creato per la 4F, adattabile a ogni classe.
 
-Il frontend è scritto in JavaScript, il backend in [TypeScript](https://www.typescriptlang.org/ "TypeScript") e utilizza [Node.js](https://nodejs.org/ "Node.js"), il view engine [EJS](https://ejs.co/ "EJS") e [Helmet JS](https://helmetjs.github.io/ "Helmet JS") usare header sicuri.
+Il frontend è scritto in JavaScript, il backend in [TypeScript](https://www.typescriptlang.org/ "TypeScript") e utilizza [Node.js](https://nodejs.org/ "Node.js"), il view engine [EJS](https://ejs.co/ "EJS") e [Helmet JS](https://helmetjs.github.io/ "Helmet JS") per usare header sicuri.
 
 ### Come usarlo per la propria classe
 
