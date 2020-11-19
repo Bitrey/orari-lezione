@@ -82,6 +82,19 @@
         ]
     },
     {
+        "id": "zanasi",
+        "nome": "palestra",
+        "link": "https://meet.google.com/lookup/gotok2rxlq",
+        "tag": ["valerio zanasi", "palestra", "scienze motorie"],
+        "ore": [
+            {
+                "giorno": 4,
+                "da": 10,
+                "a": 11
+            }
+        ]
+    },
+    {
         "id": "decarlo",
         "nome": "matematica",
         "link": "https://meet.google.com/lookup/cgeemarozp",
