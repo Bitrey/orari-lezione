@@ -3,7 +3,7 @@
         "id": "tele",
         "nome": "telecomunicazioni",
         "link": "https://meet.google.com/lookup/d4s6cdyrzb",
-        "tag": ["roberta severi", "telecomunicazioni", "elettronica"],
+        "tag": ["roberta severi", "telecomunicazioni", "alessio cuoghi"],
         "ore": [
             {
                 "giorno": 1,
@@ -21,7 +21,7 @@
         "id": "tpsit",
         "nome": "TPSIT",
         "link": "https://meet.google.com/lookup/gifgyincou",
-        "tag": ["roberta severi", "registri del core", "elettronica"],
+        "tag": ["roberta severi", "registri del core", "alessio cuoghi"],
         "ore": [
             {
                 "giorno": 1,
@@ -39,7 +39,13 @@
         "id": "marassi",
         "nome": "sistemi e reti",
         "link": "https://meet.google.com/uup-sjho-jsb",
-        "tag": ["lorena marassi", "sistemi e reti", "pitone", "bash"],
+        "tag": [
+            "lorena marassi",
+            "sistemi e reti",
+            "pitone",
+            "bash",
+            "temistocle palmieri"
+        ],
         "ore": [
             {
                 "giorno": 2,
@@ -118,6 +124,19 @@
         ]
     },
     {
+        "id": "natali",
+        "nome": "informatica",
+        "link": null,
+        "tag": ["laura natali", "giuseppina russo"],
+        "ore": [
+            {
+                "giorno": 5,
+                "da": 12,
+                "a": 14
+            }
+        ]
+    },
+    {
         "id": "macchia",
         "nome": "inglese",
         "link": "https://meet.google.com/landing",
@@ -133,6 +152,19 @@
                 "giorno": 6,
                 "da": 11,
                 "a": 12
+            }
+        ]
+    },
+    {
+        "id": "mazzetti",
+        "nome": "religione",
+        "link": null,
+        "tag": ["mazzetti"],
+        "ore": [
+            {
+                "giorno": 6,
+                "da": 10,
+                "a": 11
             }
         ]
     }

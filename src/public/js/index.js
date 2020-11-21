@@ -94,9 +94,15 @@ const updateDate = () => {
             noteMateriaElem.style.display = "block";
         } else noteMateriaElem.style.display = "none";
 
+        if (materiaTrovata.link) {
+            linkAttualeElem.href = materiaTrovata.link + "?pli=1&authuser=1";
+            linkAttualeElem.textContent = materiaTrovata.link;
+        } else {
+            linkAttualeElem.href = "https://youtu.be/dQw4w9WgXcQ";
+            linkAttualeElem.textContent = "non so il link :c";
+        }
+
         linkAttualeElem.style.display = "block";
-        linkAttualeElem.href = materiaTrovata.link + "?pli=1&authuser=1";
-        linkAttualeElem.textContent = materiaTrovata.link;
     } else {
         if (prossimaMateria) {
             materiaAttualeElem.style.display = "none";
@@ -121,8 +127,13 @@ const updateDate = () => {
         } else noteProssimaElem.style.display = "none";
 
         // linkProssimaElem.style.display = "block";
-        linkProssimaElem.href = prossimaMateria.link + "?pli=1&authuser=1";
-        linkProssimaElem.textContent = prossimaMateria.link;
+        if (prossimaMateria.link) {
+            linkProssimaElem.href = prossimaMateria.link + "?pli=1&authuser=1";
+            linkProssimaElem.textContent = prossimaMateria.link;
+        } else {
+            linkProssimaElem.href = "https://youtu.be/dQw4w9WgXcQ";
+            linkProssimaElem.textContent = "non so il link :c";
+        }
     } else {
         // linkProssimaElem.style.display = "none";
         prossimaMateriaDiv.style.display = "none";
