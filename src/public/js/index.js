@@ -111,8 +111,8 @@ const updateDate = () => {
         prossimaMateriaElem.textContent = `Tra ${
             60 - minutiAttuali
         } minuti abbiamo ${prossimaMateria.nome}`;
-        if (prossimaMateriaElem.note) {
-            noteProssimaElem.textContent = prossimaMateriaElem.note;
+        if (prossimaMateria.note) {
+            noteProssimaSpan.textContent = prossimaMateria.note;
             noteProssimaElem.style.display = "block";
         } else noteProssimaElem.style.display = "none";
 
