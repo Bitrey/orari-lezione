@@ -162,12 +162,14 @@ for (const orario of orari) {
     titleParagraph.textContent = orario.nome;
     mediaContentDiv.append(titleParagraph);
 
-    const subtitleLink = document.createElement("a");
-    subtitleLink.setAttribute("class", "subtitle is-6");
-    subtitleLink.textContent = orario.link;
-    subtitleLink.href = orario.link + "?pli=1&authuser=1";
-    subtitleLink.target = "_blank";
-    mediaContentDiv.append(subtitleLink);
+    if (orario.link) {
+        const subtitleLink = document.createElement("a");
+        subtitleLink.setAttribute("class", "subtitle is-6");
+        subtitleLink.textContent = orario.link;
+        subtitleLink.href = orario.link + "?pli=1&authuser=1";
+        subtitleLink.target = "_blank";
+        mediaContentDiv.append(subtitleLink);
+    }
 
     if (orario.note) {
         const notificationDiv = document.createElement("div");
