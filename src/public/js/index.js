@@ -62,7 +62,11 @@ const noteProssimaSpan = document.getElementById("note-prossima-span");
 const linkProssimaElem = document.getElementById("link-prossima");
 
 const updateDate = () => {
-    const date = new Date();
+    const date = new Date(
+        new Date().toLocaleString("en-US", {
+            timeZone: "Europe/Rome"
+        })
+    );
 
     const day = date.getUTCDate();
     const month = date.getUTCMonth() + 1; //months from 1-12
