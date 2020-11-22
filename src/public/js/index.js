@@ -158,7 +158,7 @@ for (const orario of orari) {
     mediaContentDiv.setAttribute("class", "media-content");
 
     const titleParagraph = document.createElement("p");
-    titleParagraph.setAttribute("class", "title is-4");
+    titleParagraph.setAttribute("class", "nome-materia title is-4");
     titleParagraph.textContent = orario.nome;
     mediaContentDiv.append(titleParagraph);
 
@@ -183,7 +183,10 @@ for (const orario of orari) {
     oreDiv.setAttribute("class", "tags are-medium");
     for (const ora of orario.ore) {
         const tagSpan = document.createElement("span");
-        tagSpan.setAttribute("class", "tag is-info is-normal is-light");
+        tagSpan.setAttribute(
+            "class",
+            "tag-materia tag is-info is-normal is-light"
+        );
         tagSpan.textContent = `${giorni[ora.giorno]} dalle ${ora.da} alle ${
             ora.a
         }`;
