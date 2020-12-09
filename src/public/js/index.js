@@ -117,10 +117,11 @@ const updateDate = () => {
     }
 
     if (prossimaMateria) {
+        const countdown = 60 - minutiAttuali;
         prossimaMateriaDiv.style.display = "block";
-        prossimaMateriaElem.textContent = `Tra ${
-            60 - minutiAttuali
-        } minuti abbiamo ${prossimaMateria.nome}`;
+        prossimaMateriaElem.textContent = `Tra ${countdown} minut${
+            countdown === 1 ? "o" : "i"
+        } abbiamo ${prossimaMateria.nome}`;
         if (prossimaMateria.note) {
             noteProssimaSpan.textContent = prossimaMateria.note;
             noteProssimaElem.style.display = "block";
