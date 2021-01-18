@@ -3,18 +3,17 @@
         "id": "tele",
         "nome": "telecomunicazioni",
         "link": "https://meet.google.com/lookup/d4s6cdyrzb",
-        "note": "orario aggiornato per lunedì 18",
         "tag": ["roberta severi", "telecomunicazioni", "alessio cuoghi"],
         "ore": [
             {
                 "giorno": 1,
-                "da": 9,
-                "a": 10
+                "da": 10,
+                "a": 12
             },
             {
                 "giorno": 3,
-                "da": 11,
-                "a": 14
+                "da": 8,
+                "a": 10
             }
         ]
     },
@@ -24,6 +23,11 @@
         "link": "https://meet.google.com/cnr-hcft-bid",
         "tag": ["roberta severi", "registri del core", "alessio cuoghi"],
         "ore": [
+            {
+                "giorno": 1,
+                "da": 8,
+                "a": 10
+            },
             {
                 "giorno": 4,
                 "da": 9,
@@ -35,7 +39,6 @@
         "id": "marassi",
         "nome": "sistemi e reti",
         "link": "https://meet.google.com/uup-sjho-jsb",
-        "note": "orario aggiornato per lunedì 18",
         "tag": [
             "lorena marassi",
             "sistemi e reti",
@@ -46,8 +49,8 @@
         "ore": [
             {
                 "giorno": 2,
-                "da": 11,
-                "a": 14
+                "da": 10,
+                "a": 11
             },
             {
                 "giorno": 4,
@@ -68,9 +71,14 @@
         "tag": ["silvia nerini", "italiano", "storia"],
         "ore": [
             {
+                "giorno": 2,
+                "da": 8,
+                "a": 9
+            },
+            {
                 "giorno": 3,
-                "da": 9,
-                "a": 10
+                "da": 11,
+                "a": 12
             },
             {
                 "giorno": 6,
@@ -83,14 +91,8 @@
         "id": "zanasi",
         "nome": "palestra",
         "link": "https://meet.google.com/lookup/hx7nc6xdyf",
-        "note": "orario aggiornato per lunedì 18",
         "tag": ["valerio zanasi", "palestra", "scienze motorie"],
         "ore": [
-            {
-                "giorno": 1,
-                "da": 11,
-                "a": 12
-            },
             {
                 "giorno": 4,
                 "da": 10,
@@ -102,18 +104,17 @@
         "id": "decarlo",
         "nome": "matematica",
         "link": "https://meet.google.com/sbj-rtbq-kyd",
-        "note": "orario aggiornato per lunedì 18",
         "tag": ["lucia de carlo", "mate"],
         "ore": [
             {
-                "giorno": 1,
-                "da": 8,
-                "a": 9
+                "giorno": 2,
+                "da": 9,
+                "a": 10
             },
             {
-                "giorno": 2,
-                "da": 8,
-                "a": 10
+                "giorno": 3,
+                "da": 10,
+                "a": 11
             },
             {
                 "giorno": 4,
@@ -139,13 +140,13 @@
         "id": "macchia",
         "nome": "inglese",
         "link": "https://meet.google.com/landing",
-        "note": "usa il codice profmacchiadad, orario aggiornato per lunedì 18",
+        "note": "usa il codice profmacchiadad",
         "tag": ["carlo macchia", "profmacchiadad"],
         "ore": [
             {
-                "giorno": 1,
-                "da": 10,
-                "a": 11
+                "giorno": 2,
+                "da": 11,
+                "a": 12
             },
             {
                 "giorno": 6,
@@ -161,7 +162,7 @@
         "tag": ["mazzetti"],
         "ore": [
             {
-                "giorno": 3,
+                "giorno": 6,
                 "da": 10,
                 "a": 11
             }
