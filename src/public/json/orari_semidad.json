@@ -15,11 +15,6 @@
                 "giorno": 3,
                 "da": 11,
                 "a": 14
-            },
-            {
-                "giorno": 6,
-                "da": 11,
-                "a": 12
             }
         ]
     },
@@ -30,13 +25,8 @@
         "tag": ["roberta severi", "registri del core", "alessio cuoghi"],
         "ore": [
             {
-                "giorno": 3,
+                "giorno": 4,
                 "da": 9,
-                "a": 10
-            },
-            {
-                "giorno": 6,
-                "da": 8,
                 "a": 10
             }
         ]
@@ -61,13 +51,13 @@
             },
             {
                 "giorno": 4,
-                "da": 8,
-                "a": 9
+                "da": 11,
+                "a": 12
             },
             {
-                "giorno": 6,
-                "da": 12,
-                "a": 13
+                "giorno": 5,
+                "da": 14,
+                "a": 16
             }
         ]
     },
@@ -78,24 +68,14 @@
         "tag": ["silvia nerini", "italiano", "storia"],
         "ore": [
             {
-                "giorno": 2,
-                "da": 8,
-                "a": 9
-            },
-            {
                 "giorno": 3,
-                "da": 10,
-                "a": 11
+                "da": 9,
+                "a": 10
             },
             {
-                "giorno": 4,
-                "da": 12,
-                "a": 14
-            },
-            {
-                "giorno": 5,
-                "da": 12,
-                "a": 14
+                "giorno": 6,
+                "da": 8,
+                "a": 10
             }
         ]
     },
@@ -108,8 +88,13 @@
         "ore": [
             {
                 "giorno": 1,
-                "da": 10,
+                "da": 11,
                 "a": 12
+            },
+            {
+                "giorno": 4,
+                "da": 10,
+                "a": 11
             }
         ]
     },
@@ -122,18 +107,18 @@
         "ore": [
             {
                 "giorno": 1,
-                "da": 12,
-                "a": 13
+                "da": 8,
+                "a": 9
             },
             {
                 "giorno": 2,
-                "da": 9,
-                "a": 11
+                "da": 8,
+                "a": 10
             },
             {
                 "giorno": 4,
-                "da": 9,
-                "a": 10
+                "da": 8,
+                "a": 9
             }
         ]
     },
@@ -144,14 +129,9 @@
         "tag": ["laura natali", "giuseppina russo"],
         "ore": [
             {
-                "giorno": 4,
-                "da": 11,
-                "a": 12
-            },
-            {
                 "giorno": 5,
-                "da": 10,
-                "a": 12
+                "da": 12,
+                "a": 14
             }
         ]
     },
@@ -164,18 +144,13 @@
         "ore": [
             {
                 "giorno": 1,
-                "da": 13,
-                "a": 14
-            },
-            {
-                "giorno": 4,
                 "da": 10,
                 "a": 11
             },
             {
-                "giorno": 5,
-                "da": 9,
-                "a": 10
+                "giorno": 6,
+                "da": 11,
+                "a": 12
             }
         ]
     },
@@ -186,7 +161,7 @@
         "tag": ["mazzetti"],
         "ore": [
             {
-                "giorno": 6,
+                "giorno": 3,
                 "da": 10,
                 "a": 11
             }
