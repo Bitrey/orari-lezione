@@ -210,3 +210,39 @@ for (const orario of orari) {
     cardDiv.append(cardContentDiv);
     materieDiv.append(cardDiv);
 }
+
+function setCookie(cname, cvalue, exdays) {
+    var d = new Date();
+    d.setTime(d.getTime() + (exdays || 7) * 24 * 60 * 60 * 1000);
+    var expires = "expires=" + d.toUTCString();
+    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+
+function getCookie(cname) {
+    var name = cname + "=";
+    var decodedCookie = decodeURIComponent(document.cookie);
+    var ca = decodedCookie.split(";");
+    for (var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == " ") {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return null;
+}
+
+const removeDadWarning = () => {
+    document.getElementById("dad-warning").remove();
+    setCookie("dadWarning", true);
+};
+
+const removeGlobalWarning = () => {
+    document.getElementById("global-warning").remove();
+    setCookie("globalWarning", true);
+};
+
+if (getCookie("dadWarning")) removeDadWarning();
+if (getCookie("globalWarning")) removeGlobalWarning();

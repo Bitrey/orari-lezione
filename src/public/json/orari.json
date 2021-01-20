@@ -3,7 +3,6 @@
         "id": "tele",
         "nome": "telecomunicazioni",
         "link": "https://meet.google.com/lookup/e4vtfyp5kb",
-        "note": "orario aggiornato per lunedì 18",
         "tag": ["roberta severi", "telecomunicazioni", "alessio cuoghi"],
         "ore": [
             {
@@ -45,7 +44,6 @@
         "id": "marassi",
         "nome": "sistemi e reti",
         "link": "https://meet.google.com/uup-sjho-jsb",
-        "note": "orario aggiornato per lunedì 18",
         "tag": [
             "lorena marassi",
             "sistemi e reti",
@@ -103,7 +101,6 @@
         "id": "zanasi",
         "nome": "palestra",
         "link": "https://meet.google.com/lookup/hx7nc6xdyf",
-        "note": "orario aggiornato per lunedì 18",
         "tag": ["valerio zanasi", "palestra", "scienze motorie"],
         "ore": [
             {
@@ -117,7 +114,6 @@
         "id": "decarlo",
         "nome": "matematica",
         "link": "https://meet.google.com/sbj-rtbq-kyd",
-        "note": "orario aggiornato per lunedì 18",
         "tag": ["lucia de carlo", "mate"],
         "ore": [
             {
@@ -159,7 +155,7 @@
         "id": "macchia",
         "nome": "inglese",
         "link": "https://meet.google.com/landing",
-        "note": "usa il codice profmacchiadad, orario aggiornato per lunedì 18",
+        "note": "usa il codice profmacchiadad",
         "tag": ["carlo macchia", "profmacchiadad"],
         "ore": [
             {
