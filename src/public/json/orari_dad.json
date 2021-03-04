@@ -2,35 +2,40 @@
     {
         "id": "tele",
         "nome": "telecomunicazioni",
-        "link": "https://meet.google.com/lookup/e4vtfyp5kb",
+        "link": "https://meet.google.com/lookup/gqpcxw2an3",
         "tag": ["roberta severi", "telecomunicazioni", "alessio cuoghi"],
         "ore": [
             {
                 "giorno": 1,
-                "da": 10,
-                "a": 12
+                "da": 9,
+                "a": 10
             },
             {
                 "giorno": 3,
-                "da": 8,
-                "a": 10
+                "da": 11,
+                "a": 14
+            },
+            {
+                "giorno": 6,
+                "da": 11,
+                "a": 12
             }
         ]
     },
     {
         "id": "tpsit",
         "nome": "TPSIT",
-        "link": "https://meet.google.com/cnr-hcft-bid",
+        "link": "https://meet.google.com/lookup/chw5sovxeq",
         "tag": ["roberta severi", "registri del core", "alessio cuoghi"],
         "ore": [
             {
-                "giorno": 1,
-                "da": 8,
+                "giorno": 3,
+                "da": 9,
                 "a": 10
             },
             {
-                "giorno": 4,
-                "da": 9,
+                "giorno": 6,
+                "da": 8,
                 "a": 10
             }
         ]
@@ -49,18 +54,18 @@
         "ore": [
             {
                 "giorno": 2,
-                "da": 10,
-                "a": 11
+                "da": 11,
+                "a": 14
             },
             {
                 "giorno": 4,
-                "da": 11,
-                "a": 12
+                "da": 8,
+                "a": 9
             },
             {
-                "giorno": 5,
-                "da": 14,
-                "a": 16
+                "giorno": 6,
+                "da": 12,
+                "a": 13
             }
         ]
     },
@@ -77,26 +82,31 @@
             },
             {
                 "giorno": 3,
-                "da": 11,
-                "a": 12
+                "da": 10,
+                "a": 11
             },
             {
-                "giorno": 6,
-                "da": 8,
-                "a": 10
+                "giorno": 4,
+                "da": 12,
+                "a": 14
+            },
+            {
+                "giorno": 5,
+                "da": 12,
+                "a": 14
             }
         ]
     },
     {
         "id": "zanasi",
         "nome": "palestra",
-        "link": "https://meet.google.com/lookup/hx7nc6xdyf",
+        "link": "https://meet.google.com/lookup/akrsu4eqqf",
         "tag": ["valerio zanasi", "palestra", "scienze motorie"],
         "ore": [
             {
-                "giorno": 4,
+                "giorno": 1,
                 "da": 10,
-                "a": 11
+                "a": 12
             }
         ]
     },
@@ -107,19 +117,19 @@
         "tag": ["lucia de carlo", "mate"],
         "ore": [
             {
-                "giorno": 2,
-                "da": 9,
-                "a": 10
+                "giorno": 1,
+                "da": 12,
+                "a": 13
             },
             {
-                "giorno": 3,
-                "da": 10,
+                "giorno": 2,
+                "da": 9,
                 "a": 11
             },
             {
                 "giorno": 4,
-                "da": 8,
-                "a": 9
+                "da": 9,
+                "a": 10
             }
         ]
     },
@@ -130,9 +140,14 @@
         "tag": ["laura natali", "giuseppina russo"],
         "ore": [
             {
+                "giorno": 4,
+                "da": 11,
+                "a": 12
+            },
+            {
                 "giorno": 5,
-                "da": 12,
-                "a": 14
+                "da": 10,
+                "a": 12
             }
         ]
     },
@@ -144,14 +159,19 @@
         "tag": ["carlo macchia", "profmacchiadad"],
         "ore": [
             {
-                "giorno": 2,
-                "da": 11,
-                "a": 12
+                "giorno": 1,
+                "da": 13,
+                "a": 14
             },
             {
-                "giorno": 6,
-                "da": 11,
-                "a": 12
+                "giorno": 4,
+                "da": 10,
+                "a": 11
+            },
+            {
+                "giorno": 5,
+                "da": 9,
+                "a": 10
             }
         ]
     },

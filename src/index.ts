@@ -23,7 +23,12 @@ app.set("views", path.join(__dirname, "/views"));
 
 app.set("view engine", "ejs");
 
-const orari = require(path.join(__dirname, "/public", "/json", "/orari.json"));
+const orari = require(path.join(
+    __dirname,
+    "/public",
+    "/json",
+    "/orari_dad.json"
+));
 
 app.get("/", (req, res) => {
     res.render("index", { orari: JSON.stringify(orari) });
