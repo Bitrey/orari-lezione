@@ -246,3 +246,138 @@ const removeGlobalWarning = () => {
 
 if (getCookie("dadWarning")) removeDadWarning();
 if (getCookie("globalWarning")) removeGlobalWarning();
+
+// Dark theme
+let darkTheme = false;
+const savedTheme = localStorage.getItem("darkTheme");
+if (savedTheme !== null) darkTheme = savedTheme === "true";
+else {
+    if (
+        window.matchMedia &&
+        window.matchMedia("(prefers-color-scheme: dark)").matches
+    ) {
+        darkTheme = true;
+    } else darkTheme = false;
+}
+console.log("Dark theme: " + darkTheme);
+
+const switchTheme = on => {
+    if (on) {
+        darkTheme = true;
+    } else if (on === false) {
+        darkTheme = false;
+    } else {
+        darkTheme = !darkTheme;
+    }
+    localStorage.setItem("darkTheme", darkTheme);
+
+    applyTheme();
+};
+
+const applyTheme = () => {
+    if (darkTheme) {
+        document.querySelector(".navbar-menu").classList.add("bg-discord-dark");
+        document
+            .querySelector(".navbar-brand")
+            .classList.add("bg-discord-dark");
+        document
+            .querySelectorAll(".message-header")
+            .forEach(e => e.classList.add("bg-discord-dark"));
+        document.querySelector(".title").classList.add("bg-discord-dark");
+        document
+            .querySelectorAll(".message-body")
+            .forEach(e => e.classList.add("bg-discord"));
+        document
+            .querySelectorAll(".message-body")
+            .forEach(e => e.classList.add("text-light"));
+        document.querySelector(".message-p").classList.add("text-light");
+        document
+            .querySelectorAll(".message-title")
+            .forEach(e => e.classList.add("text-white"));
+        document.querySelector("body").classList.add("bg-discord-light");
+        document
+            .querySelectorAll(".card")
+            .forEach(e => e.classList.add("bg-discord"));
+        document
+            .querySelectorAll(".title")
+            .forEach(e => e.classList.add("text-white"));
+        document
+            .querySelectorAll(".subtitle")
+            .forEach(e => e.classList.add("text-light"));
+        document
+            .querySelectorAll(".is-info")
+            .forEach(e => e.classList.add("bg-discord-light"));
+        document
+            .querySelectorAll(".is-normal")
+            .forEach(e => e.classList.add("text-white"));
+        document
+            .querySelectorAll(".is-normal")
+            .forEach(e => e.classList.add("bg-discord-light"));
+        document
+            .querySelectorAll(".is-info")
+            .forEach(e => e.classList.add("text-white"));
+        document
+            .querySelectorAll("a")
+            .forEach(e => e.classList.add("text-light"));
+        document
+            .querySelectorAll("span")
+            .forEach(e => e.classList.add("text-light"));
+    } else {
+        document
+            .querySelector(".navbar-menu")
+            .classList.remove("bg-discord-dark");
+        document
+            .querySelector(".navbar-brand")
+            .classList.remove("bg-discord-dark");
+        document
+            .querySelectorAll(".message-header")
+            .forEach(e => e.classList.remove("bg-discord-dark"));
+        document.querySelector(".title").classList.remove("bg-discord-dark");
+        document
+            .querySelectorAll(".message-body")
+            .forEach(e => e.classList.remove("bg-discord"));
+        document
+            .querySelectorAll(".message-body")
+            .forEach(e => e.classList.remove("text-light"));
+        document.querySelector(".message-p").classList.remove("text-light");
+        document
+            .querySelectorAll(".message-title")
+            .forEach(e => e.classList.remove("text-white"));
+        document.querySelector("body").classList.remove("bg-discord-light");
+        document
+            .querySelectorAll(".card")
+            .forEach(e => e.classList.remove("bg-discord"));
+        document
+            .querySelectorAll(".title")
+            .forEach(e => e.classList.remove("text-white"));
+        document
+            .querySelectorAll(".subtitle")
+            .forEach(e => e.classList.remove("text-light"));
+        document
+            .querySelectorAll(".is-info")
+            .forEach(e => e.classList.remove("bg-discord-light"));
+        document
+            .querySelectorAll(".is-normal")
+            .forEach(e => e.classList.remove("text-white"));
+        document
+            .querySelectorAll(".is-normal")
+            .forEach(e => e.classList.remove("bg-discord-light"));
+        document
+            .querySelectorAll(".is-info")
+            .forEach(e => e.classList.remove("text-white"));
+        document
+            .querySelectorAll("a")
+            .forEach(e => e.classList.remove("text-light"));
+        document
+            .querySelectorAll("span")
+            .forEach(e => e.classList.remove("text-light"));
+    }
+};
+
+applyTheme();
+
+const powerCb = document.querySelector("#power-cb");
+if (darkTheme) powerCb.checked = true;
+powerCb.addEventListener("click", () => {
+    switchTheme();
+});

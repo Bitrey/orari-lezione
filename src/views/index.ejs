@@ -4,6 +4,7 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Link Lezioni 4F</title>
+
         <meta
             name="description"
             content="Link delle lezioni online di tutte le materie, aggiornato in tempo reale."
@@ -31,38 +32,7 @@
             integrity="sha256-WLKGWSIJYerRN8tbNGtXWVYnUM5wMJTXD8eG4NtGcDM="
             crossorigin="anonymous"
         />
-        <style>
-            body {
-                background-color: #eef6fc;
-                padding-bottom: 2rem;
-            }
-            .navbar-menu,
-            .navbar-brand {
-                background-color: #3298dc;
-            }
-
-            .navbar-item {
-                color: white !important;
-            }
-
-            .container {
-                padding-top: 2rem;
-            }
-
-            .media-content {
-                overflow-y: hidden;
-            }
-            .tags {
-                margin-top: 1rem;
-            }
-            .card {
-                margin-bottom: 0.5rem;
-            }
-
-            .nome-materia {
-                text-transform: capitalize;
-            }
-        </style>
+        <link rel="stylesheet" href="/css/style.css" />
 
         <!-- Favicon -->
         <link
@@ -141,10 +111,11 @@
 
         <!-- Global site tag (gtag.js) - Google Analytics -->
         <script
+            defer
             async
             src="https://www.googletagmanager.com/gtag/js?id=G-H1Y5XHW56Q"
         ></script>
-        <script>
+        <script defer>
             window.dataLayer = window.dataLayer || [];
             function gtag() {
                 dataLayer.push(arguments);
@@ -204,13 +175,79 @@
                 </div>
             </div> -->
 
+            <article class="message">
+                <div class="message-header">
+                    <p>Tema scuro</p>
+                    <button class="delete" aria-label="delete"></button>
+                </div>
+                <div
+                    class="message-body"
+                    style="background-color: #36393f !important; padding: 0"
+                >
+                    <div
+                        class="card"
+                        style="background-color: #36393f !important"
+                    >
+                        <div class="card-content" style="padding: 0">
+                            <div class="content">
+                                <div class="toggle-container">
+                                    <div class="power-switch">
+                                        <input id="power-cb" type="checkbox" />
+                                        <div class="button-toggle">
+                                            <svg class="power-off">
+                                                <use
+                                                    xlink:href="#line"
+                                                    class="line"
+                                                ></use>
+                                                <use
+                                                    xlink:href="#circle"
+                                                    class="circle"
+                                                ></use>
+                                            </svg>
+                                            <svg class="power-on">
+                                                <use
+                                                    xlink:href="#line"
+                                                    class="line"
+                                                ></use>
+                                                <use
+                                                    xlink:href="#circle"
+                                                    class="circle"
+                                                ></use>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- SVG -->
+            <svg xmlns="http://www.w3.org/2000/svg" style="display: none">
+                <symbol
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 150 150"
+                    id="line"
+                >
+                    <line x1="75" y1="34" x2="75" y2="58"></line>
+                </symbol>
+                <symbol
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 150 150"
+                    id="circle"
+                >
+                    <circle cx="75" cy="80" r="35"></circle>
+                </symbol>
+            </svg>
+
             <div
                 class="message is-warning box"
                 id="global-warning"
                 style="padding: 0"
             >
                 <div class="message-header">
-                    <p>Avviso</p>
+                    <p class="message-title">Avviso</p>
                     <button
                         class="delete"
                         aria-label="delete"
@@ -218,7 +255,9 @@
                     ></button>
                 </div>
                 <div class="message-body">
-                    Gli orari sono aggiornati per la DAD (dal 4 marzo 2021).
+                    <p class="message-p">
+                        Gli orari sono aggiornati per la DAD (dal 4 marzo 2021).
+                    </p>
                 </div>
             </div>
 
@@ -301,5 +340,5 @@
         </div>
         <p id="orari-server" style="display: none"><%= orari %></p>
     </body>
-    <script src="/js/index.js"></script>
+    <script src="/js/index.js" defer></script>
 </html>
