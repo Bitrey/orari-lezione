@@ -186,11 +186,12 @@ for (const orario of orari) {
         const tagSpan = document.createElement("span");
         tagSpan.setAttribute(
             "class",
-            "tag-materia tag is-info is-normal is-light"
+            "tag-materia tag is-normal is-light " +
+                (ora.dad ? "is-primary" : "is-info")
         );
         tagSpan.textContent = `${giorni[ora.giorno]} dalle ${ora.da} alle ${
             ora.a
-        }`;
+        }${ora.dad ? " (DAD)" : ""}`;
         oreDiv.append(tagSpan);
     }
     mediaContentDiv.append(oreDiv);
@@ -241,11 +242,12 @@ const removeDadWarning = () => {
 
 const removeGlobalWarning = () => {
     document.getElementById("global-warning").remove();
-    setCookie("globalWarning", true);
+    setCookie("globalWarning", 1);
 };
 
 if (getCookie("dadWarning")) removeDadWarning();
-if (getCookie("globalWarning")) removeGlobalWarning();
+// Incrementa a ogni nuovo avviso, così se nuovo avviso utente lo vede
+if (getCookie("globalWarning" == 1)) removeGlobalWarning();
 
 // Dark theme
 let darkTheme = false;
@@ -259,7 +261,6 @@ else {
         darkTheme = true;
     } else darkTheme = false;
 }
-console.log("Dark theme: " + darkTheme);
 
 const switchTheme = on => {
     if (on) {

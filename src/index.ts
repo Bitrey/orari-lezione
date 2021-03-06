@@ -27,7 +27,7 @@ const orari = require(path.join(
     __dirname,
     "/public",
     "/json",
-    "/orari_dad.json"
+    "/orari_dad2.json"
 ));
 
 app.get("/", (req, res) => {
