@@ -186,12 +186,12 @@ for (const orario of orari) {
         const tagSpan = document.createElement("span");
         tagSpan.setAttribute(
             "class",
-            "tag-materia tag is-normal is-light " +
-                (ora.dad ? "is-primary" : "is-info")
+            "tag-materia tag is-normal is-light is-info"
+            // + (ora.dad ? "is-primary" : "is-info")
         );
         tagSpan.textContent = `${giorni[ora.giorno]} dalle ${ora.da} alle ${
             ora.a
-        }${ora.dad ? " (DAD)" : ""}`;
+        }`; // ${ora.dad ? " (DAD)" : ""}`;
         oreDiv.append(tagSpan);
     }
     mediaContentDiv.append(oreDiv);
@@ -235,19 +235,19 @@ function getCookie(cname) {
     return null;
 }
 
-const removeDadWarning = () => {
-    document.getElementById("dad-warning").remove();
-    setCookie("dadWarning", true);
-};
+// const removeDadWarning = () => {
+// document.getElementById("dad-warning").remove();
+// setCookie("dadWarning", 1);
+// };
 
 const removeGlobalWarning = () => {
-    document.getElementById("global-warning").remove();
-    setCookie("globalWarning", 1);
+    document.getElementById("global-warning").style.display = "none";
+    setCookie("globalWarning", 2);
 };
 
-if (getCookie("dadWarning")) removeDadWarning();
+// if (getCookie("dadWarning")) removeDadWarning();
 // Incrementa a ogni nuovo avviso, così se nuovo avviso utente lo vede
-if (getCookie("globalWarning" == 1)) removeGlobalWarning();
+if (getCookie("globalWarning") == 2) removeGlobalWarning();
 
 // Dark theme
 let darkTheme = false;
