@@ -18,20 +18,23 @@ app.use(helmet.referrerPolicy());
 app.use(helmet.xssFilter());
 
 import path from "path";
-app.use(express.static(path.join(__dirname, "/public")));
+app.use(express.static(path.join(__dirname, "/public", "/showable")));
 app.set("views", path.join(__dirname, "/views"));
 
 app.set("view engine", "ejs");
 
-const orari = require(path.join(
-    __dirname,
-    "/public",
-    "/json",
-    "/orari_dad2.json"
-));
+// const orari = require(path.join(
+//     __dirname,
+//     "/public",
+//     "/json",
+//     "/orari_dad2.json"
+// ));
 
 app.get("/", (req, res) => {
-    res.render("index", { orari: JSON.stringify(orari) });
+    res.render(
+        "index"
+        // { orari: JSON.stringify(orari) }
+    );
 });
 
 const PORT = Number(process.env.PORT) || 3000;

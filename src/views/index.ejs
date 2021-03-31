@@ -141,7 +141,24 @@
                 </div>
             </div>
         </nav>
-        <div class="container">
+        <div class="container" style="height: calc(100vh - 3.25rem)">
+            <div class="message is-info box" style="padding: 0; margin: auto">
+                <div class="message-header">
+                    <p>Sospensione temporanea</p>
+                </div>
+                <div class="message-body" style="background-color: white">
+                    <p>
+                        <a href="https://lezioni.bitrey.it/"
+                            >lezioni.bitrey.it</a
+                        >
+                        è temporaneamente sospeso.
+                    </p>
+                    <p>
+                        Verrà implementata un sistema di autenticazione a breve.
+                    </p>
+                </div>
+            </div>
+
             <!-- <div
                 class="message is-danger box"
                 id="dad-warning"
@@ -175,7 +192,8 @@
                 </div>
             </div> -->
 
-            <div class="message is-info box" style="padding: 0">
+            <!-- Cancella parte privacy -->
+            <!-- <div class="message is-info box" style="padding: 0">
                 <div class="message-header">
                     <p>
                         Sono le <span id="ora-attuale">XX</span> del
@@ -221,9 +239,9 @@
                         ></a>
                     </div>
                 </div>
-            </div>
+            </div> -->
 
-            <article class="message">
+            <!-- <article class="message">
                 <div class="message-header">
                     <p>Tema scuro</p>
                 </div>
@@ -268,10 +286,10 @@
                         </div>
                     </div>
                 </div>
-            </article>
+            </article> -->
 
             <!-- SVG -->
-            <svg xmlns="http://www.w3.org/2000/svg" style="display: none">
+            <!-- <svg xmlns="http://www.w3.org/2000/svg" style="display: none">
                 <symbol
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 150 150"
@@ -335,9 +353,9 @@
                         >Icons8</a
                     ></span
                 >
-            </small>
+            </small> -->
         </div>
-        <p id="orari-server" style="display: none"><%= orari %></p>
+        <!-- <p id="orari-server" style="display: none"><%# orari %></p> -->
     </body>
-    <script src="/js/index.js" defer></script>
+    <!-- <script src="/js/index.js" defer></script> -->
 </html>
