@@ -4,9 +4,9 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "minify": "minify build/public/showable/js/index.js --out-file build/public/showable/js/index.min.js",
+        "minify": "minify build/public/js/index.js --out-file build/public/js/index.min.js",
         "start:dev": "nodemon",
-        "build": "rimraf ./build && tsc && cp -nr ./src/public/showable ./build/public && cp -nr ./src/views ./build && npm run minify",
+        "build": "rimraf ./build && tsc && cp -nr ./src/public ./build && cp -nr ./src/views ./build && cp -nr ./src/orari ./build && npm run minify",
         "start": "npm run build && node build/index.js"
     },
     "repository": {

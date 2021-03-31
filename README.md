@@ -10,7 +10,7 @@ Il frontend è scritto in JavaScript, il backend in [TypeScript](https://www.typ
 -   Clona il repository con `git clone https://github.com/Bitrey/orari-lezione.git`
 -   Entra nella cartella e scarica le dependencies con `npm install`
 -   Opzionalmente, crea un file `.env` nella cartella root dove imposti le variabili d'ambiente PORT e IP.
--   Cambia gli orari nel file `src/public/json/orari.json`
+-   Cambia gli orari nel file `src/orari/orari.json`
     Il formato è il seguente:
 
 ```json
@@ -18,8 +18,8 @@ Il frontend è scritto in JavaScript, il backend in [TypeScript](https://www.typ
     {
         "id": "id-della-materia",
         "nome": "nome della materia",
-        "link": "link della lezione",
-        "note": "alcune note aggiuntive, letteralmente qualunque cosa",
+        "link": "link della lezione (string || null)",
+        "note": "alcune note aggiuntive (string || null)",
         "tag": ["alcuni", "tag", "pertinenti"],
         "ore": [
             {
@@ -45,4 +45,4 @@ La proprietà `note` è opzionale, le restanti sono obbligatorie.
 -   Fatti i tuoi debug, fai partire il server come se fosse in produzione con `npm start`, il codice in TypeScript verrà transpilato in JavaScript ES6.
 -   Puoi accedere al sito andando all'indirizzo stampato nella console.
 
-Se ti piace questo strumento, [un eurino non lo butto mai c:](https://www.paypal.me/alessandroamella "un eurino non lo butto mai c:")
+Se ti piace questo strumento, [un eurino non lo butto mai c:](https://www.paypal.me/alessandroamella "un eurino non lo butto mai :)")
