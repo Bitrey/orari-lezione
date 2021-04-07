@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="it">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Link Lezioni 4F</title>
+
+        <meta
+            name="description"
+            content="Link delle lezioni online di tutte le materie, aggiornato in tempo reale."
+        />
+        <!-- OpenGraph meta tags -->
+        <meta property="og:title" content="Link Lezioni 4F" />
+        <meta
+            property="og:description"
+            content="Link delle lezioni online di tutte le materie, aggiornato in tempo reale."
+        />
+        <meta property="og:image" content="https://i.imgur.com/xYRQlqg.png" />
+        <meta property="og:locale" content="it_IT" />
+        <meta property="og:url" content="https://lezioni.bitrey.it/" />
+        <!-- Twitter meta tags -->
+        <meta name="twitter:title" content="Link Lezioni 4F" />
+        <meta
+            name="twitter:description"
+            content="Link delle lezioni online di tutte le materie, aggiornato in tempo reale."
+        />
+        <meta name="twitter:image" content="https://i.imgur.com/xYRQlqg.png" />
+        <!-- Bulma CSS -->
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css"
+            integrity="sha256-WLKGWSIJYerRN8tbNGtXWVYnUM5wMJTXD8eG4NtGcDM="
+            crossorigin="anonymous"
+        />
+        <link rel="stylesheet" href="/css/style.css" />
+
+        <!-- Favicon -->
+        <link
+            rel="apple-touch-icon"
+            sizes="57x57"
+            href="/apple-icon-57x57.png"
+        />
+        <link
+            rel="apple-touch-icon"
+            sizes="60x60"
+            href="/apple-icon-60x60.png"
+        />
+        <link
+            rel="apple-touch-icon"
+            sizes="72x72"
+            href="/apple-icon-72x72.png"
+        />
+        <link
+            rel="apple-touch-icon"
+            sizes="76x76"
+            href="/apple-icon-76x76.png"
+        />
+        <link
+            rel="apple-touch-icon"
+            sizes="114x114"
+            href="/apple-icon-114x114.png"
+        />
+        <link
+            rel="apple-touch-icon"
+            sizes="120x120"
+            href="/apple-icon-120x120.png"
+        />
+        <link
+            rel="apple-touch-icon"
+            sizes="144x144"
+            href="/apple-icon-144x144.png"
+        />
+        <link
+            rel="apple-touch-icon"
+            sizes="152x152"
+            href="/apple-icon-152x152.png"
+        />
+        <link
+            rel="apple-touch-icon"
+            sizes="180x180"
+            href="/apple-icon-180x180.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="192x192"
+            href="/android-icon-192x192.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="/favicon-32x32.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="96x96"
+            href="/favicon-96x96.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="16x16"
+            href="/favicon-16x16.png"
+        />
+        <link rel="manifest" href="/manifest.json" />
+        <meta name="msapplication-TileColor" content="#ffffff" />
+        <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
+        <meta name="theme-color" content="#ffffff" />
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script
+            defer
+            async
+            src="https://www.googletagmanager.com/gtag/js?id=G-H1Y5XHW56Q"
+        ></script>
+        <script defer>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+            gtag("js", new Date());
+
+            gtag("config", "G-H1Y5XHW56Q");
+        </script>
+    </head>
+    <body style="min-height: 100vh">
+        <nav class="navbar">
+            <div class="navbar-brand">
+                <a href="/">
+                    <div class="navbar-item">
+                        <p class="navbar-item title is-3">Link lezioni 4F</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="navbar-menu">
+                <div class="navbar-end">
+                    <div class="navbar-item">
+                        <%- include("partials/navbarRight.ejs") %>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <div class="container">
+            <div
+                class="message is-info box"
+                id="dad-warning"
+                style="padding: 0"
+            >
+                <div class="message-header">
+                    <p>Cambia password</p>
+                </div>
+                <div class="message-body">
+                    <div
+                        class="notification is-danger"
+                        id="pw-error"
+                        style="display: none"
+                    ></div>
+                    <div
+                        class="notification is-success"
+                        id="pw-success"
+                        style="display: none"
+                    >
+                        Password cambiata con successo!<br />Stai venendo
+                        redirezionato...
+                    </div>
+
+                    <form action="/cambia-password" method="post" id="pw-form">
+                        <div class="field">
+                            <label class="label" for="old-password"
+                                >Password attuale</label
+                            >
+                            <div class="control">
+                                <input
+                                    class="input"
+                                    type="password"
+                                    placeholder="La tua vecchia password"
+                                    id="old-password"
+                                />
+                            </div>
+                        </div>
+
+                        <div class="field">
+                            <label class="label" for="new-password"
+                                >Nuova password</label
+                            >
+                            <div class="control">
+                                <input
+                                    class="input"
+                                    type="password"
+                                    placeholder="La nuova password da impostare"
+                                    id="new-password"
+                                />
+                            </div>
+                        </div>
+
+                        <div class="field">
+                            <div class="control">
+                                <button type="submit" class="button is-info">
+                                    Cambia password
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <script
+            src="https://code.jquery.com/jquery-3.6.0.min.js"
+            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+            crossorigin="anonymous"
+        ></script>
+        <script src="/js/changePw.js"></script>
+    </body>
+</html>

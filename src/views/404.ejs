@@ -125,7 +125,7 @@
             gtag("config", "G-H1Y5XHW56Q");
         </script>
     </head>
-    <body>
+    <body style="min-height: 100vh">
         <nav class="navbar">
             <div class="navbar-brand">
                 <a href="/">
@@ -144,11 +144,6 @@
             </div>
         </nav>
         <div class="container">
-            <div
-                class="notification is-info"
-                id="pw-info"
-                style="display: none"
-            ></div>
             <!-- PRIVACY SUSPENSION -->
             <!-- <div class="message is-info box" style="padding: 0; margin: auto">
                 <div class="message-header">
@@ -167,41 +162,25 @@
                 </div>
             </div> -->
 
-            <!-- <div
-                class="message is-danger box"
+            <div
+                class="message is-link box"
                 id="dad-warning"
                 style="padding: 0"
             >
                 <div class="message-header">
-                    <p>#IORESTOINDAD</p>
-                    <button
-                        class="delete"
-                        aria-label="delete"
-                        onclick="removeDadWarning()"
-                    ></button>
+                    <p>404!!</p>
                 </div>
                 <div class="message-body">
+                    <p>Pagina non trovata.</p>
                     <p>
-                        Vogliamo andare a scuola in condizioni di sicurezza per
-                        tutelare noi stessi e i nostri cari.
+                        Vuoi
+                        <a href="/">tornare alla homepage</a>?
                     </p>
-
-                    <p>
-                        I contagi sono alle stelle, il preavviso è stato minimo,
-                        non c'è organizzazione dei trasporti.
-                    </p>
-
-                    <p>
-                        Noi non siamo stati interpellati e faremo sentire la
-                        nostra voce!
-                    </p>
-
-                    <p><strong>#iorestoindad</strong></p>
                 </div>
-            </div> -->
+            </div>
 
             <!-- Cancella parte privacy -->
-            <div class="message is-info box" style="padding: 0">
+            <!-- <div class="message is-info box" style="padding: 0">
                 <div class="message-header">
                     <p>
                         Sono le <span id="ora-attuale">XX</span> del
@@ -294,10 +273,10 @@
                         </div>
                     </div>
                 </div>
-            </article>
+            </article> -->
 
             <!-- SVG -->
-            <svg xmlns="http://www.w3.org/2000/svg" style="display: none">
+            <!-- <svg xmlns="http://www.w3.org/2000/svg" style="display: none">
                 <symbol
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 150 150"
@@ -334,9 +313,9 @@
                 </div>
             </div>
 
-            <div id="materie" style="margin-bottom: 2rem"></div>
+            <div id="materie" style="margin-bottom: 2rem"></div> -->
 
-            <small style="padding-left: 1rem">
+            <!-- <small style="padding-left: 1rem">
                 <span>
                     Attribuzione del favicon:
                     <a
@@ -349,9 +328,7 @@
                         >Icons8</a
                     ></span
                 >
-            </small>
+            </small> -->
         </div>
-        <p id="orari-server" style="display: none"><%= orari %></p>
     </body>
-    <script src="/js/index.js" defer></script>
 </html>
