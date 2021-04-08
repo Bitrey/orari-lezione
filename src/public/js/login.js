@@ -4,6 +4,7 @@ function validateEmail(email) {
 }
 
 $("#login-form").submit(e => {
+    $("#login-btn").prop("disabled", true);
     e.preventDefault();
     login();
 });
@@ -49,6 +50,7 @@ function loginError(err) {
     console.log(err);
     $("#login-error").text(err);
     $("#login-error").show();
+    $("#login-btn").prop("disabled", false);
 }
 
 function loginOk() {

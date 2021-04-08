@@ -34,7 +34,7 @@
         <div class="container">
             <div class="message is-info box" style="padding: 0">
                 <div class="message-header">
-                    <p>Cambia password</p>
+                    <p>Reset password</p>
                 </div>
                 <div class="message-body">
                     <div
@@ -46,36 +46,35 @@
                         class="notification is-success"
                         id="pw-success"
                         style="display: none"
-                    >
-                        Password cambiata con successo!<br />Stai venendo
-                        redirezionato...
-                    </div>
+                    ></div>
 
-                    <form action="/cambia-password" method="post" id="pw-form">
-                        <div class="field">
-                            <label class="label" for="old-password"
-                                >Password attuale</label
-                            >
-                            <div class="control">
-                                <input
-                                    class="input"
-                                    type="password"
-                                    placeholder="La tua vecchia password"
-                                    id="old-password"
-                                />
-                            </div>
-                        </div>
-
+                    <form action="/reset-password" method="post" id="pw-form">
                         <div class="field">
                             <label class="label" for="new-password"
                                 >Nuova password</label
                             >
                             <div class="control">
                                 <input
+                                    autocomplete="new-password"
                                     class="input"
                                     type="password"
-                                    placeholder="La nuova password da impostare"
+                                    placeholder="Nuova password"
                                     id="new-password"
+                                />
+                            </div>
+                        </div>
+
+                        <div class="field">
+                            <label class="label" for="new-password-2"
+                                >Riscrivi la password</label
+                            >
+                            <div class="control">
+                                <input
+                                    autocomplete="new-password"
+                                    class="input"
+                                    type="password"
+                                    placeholder="Password scritta di nuovo"
+                                    id="new-password-2"
                                 />
                             </div>
                         </div>
@@ -84,8 +83,8 @@
                             <div class="control">
                                 <button
                                     type="submit"
-                                    id="changePw-btn"
                                     class="button is-info"
+                                    id="reset-btn"
                                 >
                                     Cambia password
                                 </button>
@@ -101,6 +100,6 @@
             integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
             crossorigin="anonymous"
         ></script>
-        <script src="/js/changePw.js"></script>
+        <script src="/js/resetPw.js"></script>
     </body>
 </html>
