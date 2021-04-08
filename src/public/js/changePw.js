@@ -4,6 +4,7 @@ function validateEmail(email) {
 }
 
 $("#pw-form").submit(e => {
+    $("#changePw-btn").prop("disabled", true);
     e.preventDefault();
     changePassword();
 });
@@ -62,6 +63,7 @@ function changePasswordError(err) {
     console.log(err);
     $("#pw-error").text(err);
     $("#pw-error").show();
+    $("#changePw-btn").prop("disabled", false);
 }
 
 function setCookie(cname, cvalue, exdays) {
