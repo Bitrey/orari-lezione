@@ -502,6 +502,9 @@ document.getElementById("minutes-bong").addEventListener("input", e => {
     elem.textContent = audioTime;
 });
 
+const hasPermissions = () =>
+    Notification && Notification.permission === "granted";
+
 let showNotifications =
     localStorage.getItem("showNotifications") === "true" && hasPermissions();
 pushCb.checked = showNotifications;
@@ -517,9 +520,6 @@ pushCb.addEventListener("change", function () {
         localStorage.setItem("showNotifications", showNotifications);
     }
 });
-
-const hasPermissions = () =>
-    Notification && Notification.permission === "granted";
 
 // function to actually ask the permissions
 function handlePermission(permission) {
