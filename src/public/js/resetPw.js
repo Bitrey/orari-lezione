@@ -20,7 +20,7 @@ function resetPassword() {
 }
 
 function resetPasswordAjax(password) {
-    return new Promise(async (resolve, reject) => {
+    return new Promise(resolve => {
         $.ajax({
             type: "post",
             url: window.location.href,
@@ -50,7 +50,7 @@ function resetPasswordError(err) {
 function resetPasswordOk() {
     $("#pw-error").hide();
     $("#pw-success").html(
-        `Password cambiata con successo! Ora puoi fare il <a href="/login">login</a>`
+        'Password cambiata con successo! Ora puoi fare il <a href="/login">login</a>'
     );
     $("#pw-success").show();
 }

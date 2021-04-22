@@ -54,7 +54,7 @@ const orariElem = document.getElementById("orari-server");
 const orari = JSON.parse(orariElem.textContent);
 orariElem.remove();
 
-let materiaAttuale = null;
+// let materiaAttuale = null;
 
 const trovaMateriaAttuale = date => {
     let prossimaMateria = null;
@@ -123,7 +123,7 @@ const updateDate = () => {
         minutiAttuali,
         prossimaMateria
     } = trovaMateriaAttuale(date);
-    materiaAttuale = materiaTrovata;
+    // materiaAttuale = materiaTrovata;
 
     if (materiaTrovata) {
         materiaAttualeElem.textContent = `Ora abbiamo ${materiaTrovata.nome} (dalle ${oraTrovata.da} alle ${oraTrovata.a}).`;
@@ -449,27 +449,27 @@ powerCb.addEventListener("click", () => {
     switchTheme();
 });
 
-function getCookie(cname) {
-    var name = cname + "=";
-    var decodedCookie = decodeURIComponent(document.cookie);
-    var ca = decodedCookie.split(";");
-    for (var i = 0; i < ca.length; i++) {
-        var c = ca[i];
-        while (c.charAt(0) == " ") {
-            c = c.substring(1);
-        }
-        if (c.indexOf(name) == 0) {
-            return c.substring(name.length, c.length);
-        }
-    }
-    return "";
-}
-function setCookie(cname, cvalue, exdays) {
-    var d = new Date();
-    d.setTime(d.getTime() + exdays * 24 * 60 * 60 * 1000);
-    var expires = "expires=" + d.toUTCString();
-    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
-}
+// function getCookie(cname) {
+//     var name = cname + "=";
+//     var decodedCookie = decodeURIComponent(document.cookie);
+//     var ca = decodedCookie.split(";");
+//     for (var i = 0; i < ca.length; i++) {
+//         var c = ca[i];
+//         while (c.charAt(0) == " ") {
+//             c = c.substring(1);
+//         }
+//         if (c.indexOf(name) == 0) {
+//             return c.substring(name.length, c.length);
+//         }
+//     }
+//     return "";
+// }
+// function setCookie(cname, cvalue, exdays) {
+//     var d = new Date();
+//     d.setTime(d.getTime() + exdays * 24 * 60 * 60 * 1000);
+//     var expires = "expires=" + d.toUTCString();
+//     document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+// }
 
 if (getCookie("showPwChanged") === "true") {
     document.getElementById("pw-info").textContent =
@@ -529,7 +529,7 @@ pushCb.addEventListener("change", function () {
 });
 
 // function to actually ask the permissions
-function handlePermission(permission) {
+function handlePermission() {
     if (
         Notification.permission === "denied" ||
         Notification.permission === "default"

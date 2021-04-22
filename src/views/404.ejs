@@ -1,49 +1,49 @@
 <!DOCTYPE html>
 <html lang="it">
-    <%- include("partials/head.ejs") %>
-    <body style="min-height: 100vh">
-        <nav class="navbar">
-            <div class="navbar-brand">
-                <a href="/">
-                    <div class="navbar-item">
-                        <p class="navbar-item title is-3">Link lezioni 4F</p>
-                    </div>
-                </a>
+  <%- include("partials/head.ejs") %>
+  <body style="min-height: 100vh">
+    <nav class="navbar">
+      <div class="navbar-brand">
+        <a href="/">
+          <div class="navbar-item">
+            <p class="navbar-item title is-3">Link lezioni 4F</p>
+          </div>
+        </a>
 
-                <a
-                    role="button"
-                    class="navbar-burger has-text-white"
-                    aria-label="menu"
-                    aria-expanded="false"
-                    data-target="navbarMenu"
-                >
-                    <span aria-hidden="true"></span>
-                    <span aria-hidden="true"></span>
-                    <span aria-hidden="true"></span>
-                </a>
-            </div>
+        <a
+          role="button"
+          class="navbar-burger has-text-white"
+          aria-label="menu"
+          aria-expanded="false"
+          data-target="navbarMenu"
+        >
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
 
-            <div id="navbarMenu" class="navbar-menu">
-                <div class="navbar-end">
-                    <div class="navbar-item">
-                        <%- include("partials/navbarRight.ejs") %>
-                    </div>
-                </div>
-            </div>
-        </nav>
-        <div class="container">
-            <div class="message is-link box" style="padding: 0">
-                <div class="message-header">
-                    <p>404!!</p>
-                </div>
-                <div class="message-body">
-                    <p>Pagina non trovata.</p>
-                    <p>
-                        Vuoi
-                        <a href="/">tornare alla homepage</a>?
-                    </p>
-                </div>
-            </div>
+      <div id="navbarMenu" class="navbar-menu">
+        <div class="navbar-end">
+          <div class="navbar-item">
+            <%- include("partials/navbarRight.ejs") %>
+          </div>
         </div>
-    </body>
+      </div>
+    </nav>
+    <div class="container">
+      <div class="message is-link box" style="padding: 0">
+        <div class="message-header">
+          <p>404!!</p>
+        </div>
+        <div class="message-body">
+          <p>Pagina non trovata.</p>
+          <p>
+            Vuoi
+            <a href="/">tornare alla homepage</a>?
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>

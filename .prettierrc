@@ -1,0 +1,9 @@
+{
+    "arrowParens": "avoid",
+    "overrides": [{ "files": "*.ejs", "options": { "tabWidth": 2 } }],
+    "singleQuote": false,
+    "semi": true,
+    "tabWidth": 4,
+    "trailingComma": "none",
+    "useTabs": false
+}

@@ -23,7 +23,7 @@ function login() {
 }
 
 function loginAjax() {
-    return new Promise(async (resolve, reject) => {
+    return new Promise((resolve, reject) => {
         $.ajax({
             type: "post",
             url: "/login",

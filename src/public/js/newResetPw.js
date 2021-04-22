@@ -20,7 +20,7 @@ function resetPassword() {
 }
 
 function resetPasswordAjax(email) {
-    return new Promise(async (resolve, reject) => {
+    return new Promise(resolve => {
         $.ajax({
             type: "post",
             url: "/nuovo-reset-password",

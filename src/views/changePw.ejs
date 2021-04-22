@@ -1,106 +1,97 @@
 <!DOCTYPE html>
 <html lang="it">
-    <%- include("partials/head.ejs") %>
-    <body style="min-height: 100vh">
-        <nav class="navbar">
-            <div class="navbar-brand">
-                <a href="/">
-                    <div class="navbar-item">
-                        <p class="navbar-item title is-3">Link lezioni 4F</p>
-                    </div>
-                </a>
+  <%- include("partials/head.ejs") %>
+  <body style="min-height: 100vh">
+    <nav class="navbar">
+      <div class="navbar-brand">
+        <a href="/">
+          <div class="navbar-item">
+            <p class="navbar-item title is-3">Link lezioni 4F</p>
+          </div>
+        </a>
 
-                <a
-                    role="button"
-                    class="navbar-burger has-text-white"
-                    aria-label="menu"
-                    aria-expanded="false"
-                    data-target="navbarMenu"
-                >
-                    <span aria-hidden="true"></span>
-                    <span aria-hidden="true"></span>
-                    <span aria-hidden="true"></span>
-                </a>
-            </div>
+        <a
+          role="button"
+          class="navbar-burger has-text-white"
+          aria-label="menu"
+          aria-expanded="false"
+          data-target="navbarMenu"
+        >
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
 
-            <div id="navbarMenu" class="navbar-menu">
-                <div class="navbar-end">
-                    <div class="navbar-item">
-                        <%- include("partials/navbarRight.ejs") %>
-                    </div>
-                </div>
-            </div>
-        </nav>
-        <div class="container">
-            <div class="message is-info box" style="padding: 0">
-                <div class="message-header">
-                    <p>Cambia password</p>
-                </div>
-                <div class="message-body">
-                    <div
-                        class="notification is-danger"
-                        id="pw-error"
-                        style="display: none"
-                    ></div>
-                    <div
-                        class="notification is-success"
-                        id="pw-success"
-                        style="display: none"
-                    >
-                        Password cambiata con successo!<br />Stai venendo
-                        redirezionato...
-                    </div>
-
-                    <form action="/cambia-password" method="post" id="pw-form">
-                        <div class="field">
-                            <label class="label" for="old-password"
-                                >Password attuale</label
-                            >
-                            <div class="control">
-                                <input
-                                    class="input"
-                                    type="password"
-                                    placeholder="La tua vecchia password"
-                                    id="old-password"
-                                />
-                            </div>
-                        </div>
-
-                        <div class="field">
-                            <label class="label" for="new-password"
-                                >Nuova password</label
-                            >
-                            <div class="control">
-                                <input
-                                    class="input"
-                                    type="password"
-                                    placeholder="La nuova password da impostare"
-                                    id="new-password"
-                                />
-                            </div>
-                        </div>
-
-                        <div class="field">
-                            <div class="control">
-                                <button
-                                    type="submit"
-                                    id="changePw-btn"
-                                    class="button is-info"
-                                >
-                                    Cambia password
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
+      <div id="navbarMenu" class="navbar-menu">
+        <div class="navbar-end">
+          <div class="navbar-item">
+            <%- include("partials/navbarRight.ejs") %>
+          </div>
         </div>
+      </div>
+    </nav>
+    <div class="container">
+      <div class="message is-info box" style="padding: 0">
+        <div class="message-header">
+          <p>Cambia password</p>
+        </div>
+        <div class="message-body">
+          <div
+            class="notification is-danger"
+            id="pw-error"
+            style="display: none"
+          ></div>
+          <div
+            class="notification is-success"
+            id="pw-success"
+            style="display: none"
+          >
+            Password cambiata con successo!<br />Stai venendo redirezionato...
+          </div>
 
-        <script
-            src="https://code.jquery.com/jquery-3.6.0.min.js"
-            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
-            crossorigin="anonymous"
-        ></script>
-        <script src="/js/changePw.js"></script>
-    </body>
+          <form action="/cambia-password" method="post" id="pw-form">
+            <div class="field">
+              <label class="label" for="old-password">Password attuale</label>
+              <div class="control">
+                <input
+                  class="input"
+                  type="password"
+                  placeholder="La tua vecchia password"
+                  id="old-password"
+                />
+              </div>
+            </div>
+
+            <div class="field">
+              <label class="label" for="new-password">Nuova password</label>
+              <div class="control">
+                <input
+                  class="input"
+                  type="password"
+                  placeholder="La nuova password da impostare"
+                  id="new-password"
+                />
+              </div>
+            </div>
+
+            <div class="field">
+              <div class="control">
+                <button type="submit" id="changePw-btn" class="button is-info">
+                  Cambia password
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+    <script src="/js/changePw.js"></script>
+  </body>
 </html>

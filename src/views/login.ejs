@@ -1,112 +1,104 @@
 <!DOCTYPE html>
 <html lang="it">
-    <%- include("partials/head.ejs") %>
-    <body style="min-height: 100vh">
-        <nav class="navbar">
-            <div class="navbar-brand">
-                <a href="/">
-                    <div class="navbar-item">
-                        <p class="navbar-item title is-3">Link lezioni 4F</p>
-                    </div>
-                </a>
+  <%- include("partials/head.ejs") %>
+  <body style="min-height: 100vh">
+    <nav class="navbar">
+      <div class="navbar-brand">
+        <a href="/">
+          <div class="navbar-item">
+            <p class="navbar-item title is-3">Link lezioni 4F</p>
+          </div>
+        </a>
 
-                <a
-                    role="button"
-                    class="navbar-burger has-text-white"
-                    aria-label="menu"
-                    aria-expanded="false"
-                    data-target="navbarMenu"
-                >
-                    <span aria-hidden="true"></span>
-                    <span aria-hidden="true"></span>
-                    <span aria-hidden="true"></span>
-                </a>
-            </div>
+        <a
+          role="button"
+          class="navbar-burger has-text-white"
+          aria-label="menu"
+          aria-expanded="false"
+          data-target="navbarMenu"
+        >
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
 
-            <div id="navbarMenu" class="navbar-menu">
-                <div class="navbar-end">
-                    <div class="navbar-item">
-                        <%- include("partials/navbarRight.ejs") %>
-                    </div>
-                </div>
-            </div>
-        </nav>
-        <div class="container">
-            <div class="message is-info box" style="padding: 0">
-                <div class="message-header">
-                    <p>Login form</p>
-                </div>
-                <div class="message-body">
-                    <div
-                        class="notification is-danger"
-                        id="login-error"
-                        style="display: none"
-                    ></div>
-                    <div
-                        class="notification is-success"
-                        id="login-success"
-                        style="display: none"
-                    >
-                        Login effettuato con successo!<br />Stai venendo
-                        redirezionato...
-                    </div>
-
-                    <form action="/login" method="post" id="login-form">
-                        <div class="field">
-                            <label class="label" for="login-email">Email</label>
-                            <div class="control">
-                                <input
-                                    class="input"
-                                    type="email"
-                                    placeholder="La tua email"
-                                    id="login-email"
-                                />
-                            </div>
-                        </div>
-
-                        <div class="field">
-                            <label class="label" for="login-password"
-                                >Password</label
-                            >
-                            <div class="control">
-                                <input
-                                    class="input"
-                                    type="password"
-                                    placeholder="La tua password"
-                                    id="login-password"
-                                />
-                            </div>
-                        </div>
-
-                        <div class="field">
-                            <div class="control">
-                                <button
-                                    type="submit"
-                                    class="button is-info"
-                                    id="login-btn"
-                                >
-                                    Login
-                                </button>
-                            </div>
-                        </div>
-
-                        <div class="field">
-                            <small
-                                >Non te la ricordi? Puoi
-                                <a href="/reset-password">resettarla qua</a
-                                >.</small
-                            >
-                        </div>
-                    </form>
-                </div>
-            </div>
+      <div id="navbarMenu" class="navbar-menu">
+        <div class="navbar-end">
+          <div class="navbar-item">
+            <%- include("partials/navbarRight.ejs") %>
+          </div>
         </div>
+      </div>
+    </nav>
+    <div class="container">
+      <div class="message is-info box" style="padding: 0">
+        <div class="message-header">
+          <p>Login form</p>
+        </div>
+        <div class="message-body">
+          <div
+            class="notification is-danger"
+            id="login-error"
+            style="display: none"
+          ></div>
+          <div
+            class="notification is-success"
+            id="login-success"
+            style="display: none"
+          >
+            Login effettuato con successo!<br />Stai venendo redirezionato...
+          </div>
 
-        <script
-            src="https://code.jquery.com/jquery-3.6.0.min.js"
-            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
-            crossorigin="anonymous"
-        ></script>
-        <script src="/js/login.js"></script>
-    </body>
+          <form action="/login" method="post" id="login-form">
+            <div class="field">
+              <label class="label" for="login-email">Email</label>
+              <div class="control">
+                <input
+                  class="input"
+                  type="email"
+                  placeholder="La tua email"
+                  id="login-email"
+                />
+              </div>
+            </div>
+
+            <div class="field">
+              <label class="label" for="login-password">Password</label>
+              <div class="control">
+                <input
+                  class="input"
+                  type="password"
+                  placeholder="La tua password"
+                  id="login-password"
+                />
+              </div>
+            </div>
+
+            <div class="field">
+              <div class="control">
+                <button type="submit" class="button is-info" id="login-btn">
+                  Login
+                </button>
+              </div>
+            </div>
+
+            <div class="field">
+              <small
+                >Non te la ricordi? Puoi
+                <a href="/reset-password">resettarla qua</a>.</small
+              >
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+    <script src="/js/login.js"></script>
+  </body>
 </html>
