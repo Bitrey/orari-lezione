@@ -366,6 +366,13 @@ const applyTheme = () => {
         document
             .querySelectorAll("span")
             .forEach(e => e.classList.add("text-light"));
+        document
+            .querySelectorAll(".file-cta")
+            .forEach(e => e.classList.add("bg-discord-light"));
+        document
+            .querySelector("#play-sound-btn")
+            .classList.add("bg-discord-light");
+        document.querySelector("#play-svg").style.fill = "#fff";
     } else {
         document
             .querySelector(".navbar-menu")
@@ -415,6 +422,13 @@ const applyTheme = () => {
         document
             .querySelectorAll("span")
             .forEach(e => e.classList.remove("text-light"));
+        document
+            .querySelectorAll(".file-cta")
+            .forEach(e => e.classList.remove("bg-discord-light"));
+        document
+            .querySelector("#play-sound-btn")
+            .classList.remove("bg-discord-light");
+        document.querySelector("#play-svg").style.fill = "#000";
     }
 };
 
