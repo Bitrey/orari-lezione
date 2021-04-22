@@ -274,3 +274,15 @@ body .socials > a {
 body .socials > a:hover {
     --scale: 1;
 }
+
+#minutes-bong {
+    border-bottom: 1px solid;
+}
+
+#minutes-bong {
+    border-bottom: 1px solid;
+}
+#minutes-bong:focus,
+#minutes-bong:focus {
+    outline: none;
+}

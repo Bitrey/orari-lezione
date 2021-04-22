@@ -11,6 +11,39 @@ const giorni = [
     "Sabato"
 ];
 
+let bong = new Audio("/sfx/snapchat.mp3");
+let audioTime = 59;
+function handleFiles(event) {
+    var files = event.target.files;
+    bong = new Audio(URL.createObjectURL(files[0]));
+}
+
+const currentTitle = document.title;
+const playSound = () => {
+    const date = new Date(
+        new Date().toLocaleString("en-US", {
+            timeZone: "Europe/Rome"
+        })
+    );
+    const { materiaTrovata, prossimaMateria } = trovaMateriaAttuale(date);
+
+    const newTitle = (
+        (prossimaMateria && prossimaMateria.nome) ||
+        (materiaTrovata && materiaTrovata.nome)
+    ).toUpperCase();
+    setTimeout(() => (document.title = newTitle), 0);
+    setTimeout(() => (document.title = currentTitle), 500);
+    setTimeout(() => (document.title = newTitle), 1000);
+    setTimeout(() => (document.title = currentTitle), 1500);
+    setTimeout(() => (document.title = newTitle), 2000);
+    setTimeout(() => (document.title = currentTitle), 4000);
+    bong.play();
+};
+
+document
+    .getElementById("sound-upload")
+    .addEventListener("change", handleFiles, false);
+
 // Days go from 0 (sunday) to 6 (saturday)
 // La variabile "orari" viene passata dal server nel P con id orari-server
 const orariElem = document.getElementById("orari-server");
@@ -138,6 +171,16 @@ const updateDate = () => {
     } else {
         // linkProssimaElem.style.display = "none";
         prossimaMateriaDiv.style.display = "none";
+    }
+
+    // Suono
+    if (
+        date.getMinutes() == audioTime &&
+        date.getSeconds() == 0 &&
+        (prossimaMateria || materiaTrovata) &&
+        document.getElementById("do-play-sound").checked
+    ) {
+        playSound();
     }
 };
 updateDate();
@@ -411,3 +454,28 @@ if (getCookie("showPwChanged") === "true") {
     document.getElementById("pw-info").style.display = "block";
     setCookie("showPwChanged", "false");
 }
+
+const changeVolume = () => {
+    const vol = parseInt(document.getElementById("volume").value);
+    document.getElementById("vol-percentage").textContent = vol;
+    bong.volume = vol / 100;
+};
+
+document.getElementById("minutes-bong").addEventListener("input", e => {
+    const elem = document.getElementById("minutes-bong");
+
+    const insertedNum = parseInt(e.data);
+    let totalNum = parseInt(elem.textContent);
+
+    if (!Number.isNaN(totalNum)) {
+        if (totalNum < 0) totalNum = 0;
+        else if (totalNum > 59) totalNum = 59;
+    } else if (
+        (Number.isNaN(insertedNum) && Number.isNaN(totalNum)) ||
+        !elem.textContent
+    ) {
+        totalNum = 59;
+    }
+    audioTime = totalNum;
+    elem.textContent = audioTime;
+});

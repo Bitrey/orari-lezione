@@ -97,42 +97,133 @@
                     </p>
                 </div>
                 <div class="message-body" style="background-color: white">
-                    <p id="materia-attuale">Caricamento materia attuale...</p>
-                    <p id="note-materia">
-                        Note:
+                    <div class="columns" style="align-items: center">
+                        <div class="column">
+                            <p id="materia-attuale">
+                                Caricamento materia attuale...
+                            </p>
+                            <p id="note-materia">
+                                Note:
 
-                        <span id="note-materia-span" style="font-weight: 600">
-                            Caricamento note materia...
-                        </span>
-                    </p>
-                    <a
-                        href="#"
-                        id="link-attuale"
-                        style="display: none"
-                        target="_blank"
-                        class="subtitle is-6"
-                    ></a>
+                                <span
+                                    id="note-materia-span"
+                                    style="font-weight: 600"
+                                >
+                                    Caricamento note materia...
+                                </span>
+                            </p>
+                            <a
+                                href="#"
+                                id="link-attuale"
+                                style="display: none"
+                                target="_blank"
+                                class="subtitle is-6"
+                            ></a>
 
-                    <div id="prossima-materia-div" style="display: none">
-                        <p id="prossima-materia">
-                            Caricamento prossima materia...
-                        </p>
-                        <p id="note-prossima">
-                            Note:
-
-                            <span
-                                id="note-prossima-span"
-                                style="font-weight: 600"
+                            <div
+                                id="prossima-materia-div"
+                                style="display: none"
                             >
-                                Caricamento note materia...
-                            </span>
-                        </p>
-                        <a
-                            href="#"
-                            id="link-prossima"
-                            target="_blank"
-                            class="subtitle is-6"
-                        ></a>
+                                <p id="prossima-materia">
+                                    Caricamento prossima materia...
+                                </p>
+                                <p id="note-prossima">
+                                    Note:
+
+                                    <span
+                                        id="note-prossima-span"
+                                        style="font-weight: 600"
+                                    >
+                                        Caricamento note materia...
+                                    </span>
+                                </p>
+                                <a
+                                    href="#"
+                                    id="link-prossima"
+                                    target="_blank"
+                                    class="subtitle is-6"
+                                ></a>
+                            </div>
+                        </div>
+
+                        <div class="column">
+                            <div style="display: flex; align-items: center">
+                                <div id="bong-file" class="file has-name">
+                                    <label class="file-label">
+                                        <input
+                                            class="file-input"
+                                            id="sound-upload"
+                                            type="file"
+                                            name="resume"
+                                        />
+                                        <span class="file-cta">
+                                            <span class="file-icon">
+                                                <svg
+                                                    xmlns="http://www.w3.org/2000/svg"
+                                                    width="24"
+                                                    height="24"
+                                                    viewBox="0 0 24 24"
+                                                >
+                                                    <path
+                                                        d="M23 0l-15.996 3.585v13.04c-2.979-.589-6.004 1.671-6.004 4.154 0 2.137 1.671 3.221 3.485 3.221 2.155 0 4.512-1.528 4.515-4.638v-10.9l12-2.459v8.624c-2.975-.587-6 1.664-6 4.141 0 2.143 1.715 3.232 3.521 3.232 2.14 0 4.476-1.526 4.479-4.636v-17.364z"
+                                                    />
+                                                </svg>
+                                            </span>
+                                            <span class="file-label">
+                                                Scegli un suono
+                                            </span>
+                                        </span>
+                                        <span class="file-name"
+                                            >snapchat.mp3</span
+                                        >
+                                    </label>
+                                </div>
+                                <button
+                                    style="margin-left: 1rem"
+                                    class="button"
+                                    onclick="playSound()"
+                                >
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="24"
+                                        height="24"
+                                        viewBox="0 0 24 24"
+                                    >
+                                        <path
+                                            d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-3 17v-10l9 5.146-9 4.854z"
+                                        />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div style="display: flex; align-items: center">
+                                <label for="volume" style="padding-right: 1rem"
+                                    >Volume</label
+                                >
+                                <input
+                                    class="slider is-fullwidth"
+                                    step="1"
+                                    min="0"
+                                    max="100"
+                                    value="50"
+                                    type="range"
+                                    id="volume"
+                                    oninput="changeVolume()"
+                                />
+                                <span
+                                    id="vol-percentage"
+                                    style="padding-left: 0.5rem"
+                                    >50</span
+                                >%
+                            </div>
+
+                            <label class="checkbox" style="padding-top: 0.5rem">
+                                <input type="checkbox" id="do-play-sound" />
+                                Suona quando sono i
+                            </label>
+                            <span id="minutes-bong" contenteditable="true"
+                                >59</span
+                            >
+                        </div>
                     </div>
                 </div>
             </div>
@@ -241,5 +332,22 @@
         </div>
         <p id="orari-server" style="display: none"><%= orari %></p>
     </body>
+    <script>
+        const fileInput = document.querySelector("#bong-file input[type=file]");
+        fileInput.onchange = () => {
+            if (fileInput.files.length > 0) {
+                const fileName = document.querySelector(
+                    "#bong-file .file-name"
+                );
+                fileName.textContent = fileInput.files[0].name;
+            }
+        };
+    </script>
+    <script
+        src="https://cdn.jsdelivr.net/npm/bulma-slider@2.0.4/dist/js/bulma-slider.min.js"
+        integrity="sha256-5SDp724yI+z7tQtGSdI4r1qFr5FhgArR0APayA10jyQ="
+        crossorigin="anonymous"
+        defer
+    ></script>
     <script src="/js/index.js" defer></script>
 </html>
