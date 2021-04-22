@@ -18,6 +18,8 @@ function handleFiles(event) {
     bong = new Audio(URL.createObjectURL(files[0]));
 }
 
+const pushCb = document.getElementById("do-push");
+
 const currentTitle = document.title;
 const playSound = () => {
     const date = new Date(
@@ -177,10 +179,14 @@ const updateDate = () => {
     if (
         date.getMinutes() == audioTime &&
         date.getSeconds() == 0 &&
-        (prossimaMateria || materiaTrovata) &&
-        document.getElementById("do-play-sound").checked
+        (prossimaMateria || materiaTrovata)
     ) {
-        playSound();
+        if (document.getElementById("do-play-sound").checked) {
+            playSound();
+        }
+        if (showNotifications) {
+            displayNotification();
+        }
     }
 };
 updateDate();
@@ -372,7 +378,7 @@ const applyTheme = () => {
         document
             .querySelector("#play-sound-btn")
             .classList.add("bg-discord-light");
-        document.querySelector("#play-svg").style.fill = "#fff";
+        document.querySelectorAll(".svg").forEach(e => (e.style.fill = "#fff"));
     } else {
         document
             .querySelector(".navbar-menu")
@@ -428,7 +434,9 @@ const applyTheme = () => {
         document
             .querySelector("#play-sound-btn")
             .classList.remove("bg-discord-light");
-        document.querySelector("#play-svg").style.fill = "#000";
+        document
+            .querySelectorAll(".svg")
+            .forEach(e => (e.style.fill = "#1d72aa"));
     }
 };
 
@@ -493,3 +501,97 @@ document.getElementById("minutes-bong").addEventListener("input", e => {
     audioTime = totalNum;
     elem.textContent = audioTime;
 });
+
+let showNotifications = localStorage.getItem("showNotifications") || false;
+
+pushCb.addEventListener("change", function () {
+    if (this.checked) {
+        if (hasPermissions()) {
+            showNotifications = true;
+            localStorage.setItem("showNotifications", showNotifications);
+        } else askNotificationPermission();
+    } else {
+        showNotifications = false;
+        localStorage.setItem("showNotifications", showNotifications);
+    }
+});
+
+const hasPermissions = () =>
+    Notification && Notification.permission === "granted";
+
+// function to actually ask the permissions
+function handlePermission(permission) {
+    if (
+        Notification.permission === "denied" ||
+        Notification.permission === "default"
+    ) {
+        noNotifications();
+        pushCb.checked = false;
+    }
+    showNotifications = true;
+    localStorage.setItem("showNotifications", true);
+    // Already checked
+    // else {
+    //     pushCb.checked = true;
+    // }
+}
+
+function checkNotificationPromise() {
+    try {
+        Notification.requestPermission().then();
+    } catch (e) {
+        return false;
+    }
+
+    return true;
+}
+
+function askNotificationPermission() {
+    // Let's check if the browser supports notifications
+    if (!("Notification" in window)) noNotifications();
+    else {
+        if (checkNotificationPromise()) {
+            Notification.requestPermission().then(permission => {
+                handlePermission(permission);
+            });
+        } else {
+            Notification.requestPermission(function (permission) {
+                handlePermission(permission);
+            });
+        }
+    }
+}
+
+const noNotifications = () => {
+    document.getElementById("content").classList.remove("focus");
+    document.getElementById("content").classList.add("blur");
+    document.getElementById("no-push").style.display = "block";
+};
+
+const displayNotification = () => {
+    const date = new Date(
+        new Date().toLocaleString("en-US", {
+            timeZone: "Europe/Rome"
+        })
+    );
+    const {
+        materiaTrovata,
+        prossimaMateria,
+        minutiAttuali
+    } = trovaMateriaAttuale(date);
+
+    const materia =
+        (prossimaMateria && prossimaMateria.nome) ||
+        (materiaTrovata && materiaTrovata.nome);
+    const s = 60 - minutiAttuali;
+
+    const img = "/icon128.png";
+    const text = `${
+        s === 0 ? "Ora" : `Tra ${s} minut${s === 1 ? "o" : "i"}`
+    } minuti abbiamo ${materia}`;
+    const notification = new Notification("Orari Lezione 4F", {
+        body: text,
+        icon: img,
+        vibrate: true
+    });
+};
