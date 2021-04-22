@@ -502,7 +502,9 @@ document.getElementById("minutes-bong").addEventListener("input", e => {
     elem.textContent = audioTime;
 });
 
-let showNotifications = localStorage.getItem("showNotifications") || false;
+let showNotifications =
+    localStorage.getItem("showNotifications") === "true" && hasPermissions();
+pushCb.checked = showNotifications;
 
 pushCb.addEventListener("change", function () {
     if (this.checked) {
