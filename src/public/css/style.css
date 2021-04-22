@@ -286,3 +286,7 @@ body .socials > a:hover {
 #minutes-bong:focus {
     outline: none;
 }
+
+#do-play-label:hover {
+    color: inherit;
+}
