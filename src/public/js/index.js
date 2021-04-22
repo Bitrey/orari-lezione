@@ -29,16 +29,18 @@ const playSound = () => {
     );
     const { materiaTrovata, prossimaMateria } = trovaMateriaAttuale(date);
 
-    const newTitle = (
+    let newTitle =
         (prossimaMateria && prossimaMateria.nome) ||
-        (materiaTrovata && materiaTrovata.nome)
-    ).toUpperCase();
-    setTimeout(() => (document.title = newTitle), 0);
-    setTimeout(() => (document.title = currentTitle), 500);
-    setTimeout(() => (document.title = newTitle), 1000);
-    setTimeout(() => (document.title = currentTitle), 1500);
-    setTimeout(() => (document.title = newTitle), 2000);
-    setTimeout(() => (document.title = currentTitle), 4000);
+        (materiaTrovata && materiaTrovata.nome);
+    if (newTitle) {
+        newTitle = newTitle.toUpperCase();
+        setTimeout(() => (document.title = newTitle), 0);
+        setTimeout(() => (document.title = currentTitle), 500);
+        setTimeout(() => (document.title = newTitle), 1000);
+        setTimeout(() => (document.title = currentTitle), 1500);
+        setTimeout(() => (document.title = newTitle), 2000);
+        setTimeout(() => (document.title = currentTitle), 4000);
+    }
     bong.play();
 };
 
@@ -591,7 +593,7 @@ const displayNotification = () => {
     const text = `${
         s === 0 ? "Ora" : `Tra ${s} minut${s === 1 ? "o" : "i"}`
     } minuti abbiamo ${materia}`;
-    const notification = new Notification("Orari Lezione 4F", {
+    new Notification("Orari Lezione 4F", {
         body: text,
         icon: img,
         vibrate: true
