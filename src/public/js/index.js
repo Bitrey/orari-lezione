@@ -98,6 +98,7 @@ const noteProssimaElem = document.getElementById("note-prossima");
 const noteProssimaSpan = document.getElementById("note-prossima-span");
 const linkProssimaElem = document.getElementById("link-prossima");
 
+let canPlay = true;
 const updateDate = () => {
     const date = new Date(
         new Date().toLocaleString("en-US", {
@@ -178,16 +179,14 @@ const updateDate = () => {
     }
 
     // Suono
-    if (
-        date.getMinutes() == audioTime &&
-        date.getSeconds() == 0 &&
-        (prossimaMateria || materiaTrovata)
-    ) {
+    if (date.getMinutes() == audioTime && date.getSeconds() == 0) {
         if (document.getElementById("do-play-sound").checked) {
             playSound();
         }
-        if (showNotifications) {
+        if (canPlay && showNotifications) {
             displayNotification();
+            canPlay = false;
+            setTimeout(() => (canPlay = true), 1000);
         }
     }
 };
@@ -378,8 +377,8 @@ const applyTheme = () => {
             .querySelectorAll(".file-cta")
             .forEach(e => e.classList.add("bg-discord-light"));
         document
-            .querySelector("#play-sound-btn")
-            .classList.add("bg-discord-light");
+            .querySelectorAll(".button-ds")
+            .forEach(e => e.classList.add("bg-discord-light"));
         document.querySelectorAll(".svg").forEach(e => (e.style.fill = "#fff"));
     } else {
         document
@@ -434,8 +433,8 @@ const applyTheme = () => {
             .querySelectorAll(".file-cta")
             .forEach(e => e.classList.remove("bg-discord-light"));
         document
-            .querySelector("#play-sound-btn")
-            .classList.remove("bg-discord-light");
+            .querySelectorAll(".button-ds")
+            .forEach(e => e.classList.remove("bg-discord-light"));
         document
             .querySelectorAll(".svg")
             .forEach(e => (e.style.fill = "#1d72aa"));
@@ -479,11 +478,17 @@ if (getCookie("showPwChanged") === "true") {
     setCookie("showPwChanged", "false");
 }
 
-const changeVolume = () => {
-    const vol = parseInt(document.getElementById("volume").value);
+const changeVolume = newVol => {
+    const vol = newVol || parseInt(document.getElementById("volume").value);
     document.getElementById("vol-percentage").textContent = vol;
     bong.volume = vol / 100;
+    localStorage.setItem("volume", vol);
+    return vol;
 };
+
+document.getElementById("volume").value = changeVolume(
+    localStorage.getItem("volume")
+);
 
 document.getElementById("minutes-bong").addEventListener("input", e => {
     const elem = document.getElementById("minutes-bong");
@@ -592,7 +597,11 @@ const displayNotification = () => {
     const img = "/icon128.png";
     const text = `${
         s === 0 ? "Ora" : `Tra ${s} minut${s === 1 ? "o" : "i"}`
-    } minuti abbiamo ${materia}`;
+    } minuti ${
+        materia
+            ? `abbiamo ${materia}`
+            : "non c'è niente, hai giusto lezioni.bitrey.it aperto"
+    }`;
     new Notification("Orari Lezione 4F", {
         body: text,
         icon: img,
