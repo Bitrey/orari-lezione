@@ -595,9 +595,7 @@ const displayNotification = () => {
     const s = 60 - minutiAttuali;
 
     const img = "/icon128.png";
-    const text = `${
-        s === 0 ? "Ora" : `Tra ${s} minut${s === 1 ? "o" : "i"}`
-    } minuti ${
+    const text = `${s === 0 ? "Ora" : `Tra ${s} minut${s === 1 ? "o" : "i"}`} ${
         materia
             ? `abbiamo ${materia}`
             : "non c'è niente, hai giusto lezioni.bitrey.it aperto"
