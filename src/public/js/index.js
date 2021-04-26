@@ -292,12 +292,12 @@ function getCookie(cname) {
 
 const removeGlobalWarning = () => {
     document.getElementById("global-warning").style.display = "none";
-    setCookie("globalWarning", 3);
+    setCookie("globalWarning", 4);
 };
 
 // if (getCookie("dadWarning")) removeDadWarning();
 // Incrementa a ogni nuovo avviso, così se nuovo avviso utente lo vede
-if (getCookie("globalWarning") == 3) removeGlobalWarning();
+if (getCookie("globalWarning") == 4) removeGlobalWarning();
 
 // Dark theme
 let darkTheme = false;
